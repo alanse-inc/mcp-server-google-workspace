@@ -3,7 +3,6 @@
     ".": {
       "release-type": "node",
       "package-name": "@alanse/mcp-server-google-workspace",
-      "changelog-path": "CHANGELOG.md",
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": true,
       "extra-files": [
