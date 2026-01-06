@@ -1,0 +1,7 @@
+.env
+/dist
+/node_modules
+
+# Local development documents
+requirements.md
+tasks.md

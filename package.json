@@ -1,0 +1,61 @@
+{
+  "name": "@alanse/mcp-server-google-workspace",
+  "version": "1.2.0",
+  "description": "The most comprehensive MCP server for Google Workspace - Complete integration for Sheets (57 tools), Drive, and future Docs, Calendar, Forms support",
+  "license": "Elastic-2.0",
+  "author": "Alanse inc",
+  "homepage": "https://github.com/alanse-inc/mcp-server-google-workspace",
+  "bugs": "https://github.com/alanse-inc/mcp-server-google-workspace/issues",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanse-inc/mcp-server-google-workspace.git"
+  },
+  "keywords": [
+    "Google Workspace",
+    "Google Drive",
+    "Google Sheets",
+    "Google Docs",
+    "Google Calendar",
+    "MCP",
+    "MCP Server",
+    "Model Context Protocol",
+    "AI",
+    "Automation"
+  ],
+  "bin": {
+    "mcp-server-google-workspace": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "@modelcontextprotocol/sdk": "0.5.0",
+    "dotenv": "^16.5.0",
+    "googleapis": "^144.0.0",
+    "nodemailer": "^6.9.16",
+    "html-to-text": "^9.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.3",
+    "@types/nodemailer": "^6.4.17",
+    "@types/html-to-text": "^9.0.4",
+    "@vitest/ui": "^4.0.16",
+    "shx": "^0.3.4",
+    "typescript": "^5.6.2",
+    "vitest": "^4.0.16"
+  }
+}
