@@ -144,6 +144,40 @@ import { schema as gmailGetMessagesBatchSchema, getMessagesBatch } from './gmail
 import { schema as gmailGetThreadsBatchSchema, getThreadsBatch } from './gmail/batch/gmail_get_threads_batch.js';
 import { schema as gmailBatchModifyLabelsSchema, batchModifyLabels } from './gmail/batch/gmail_batch_modify_labels.js';
 
+// Calendar - Basic operations
+import { schema as calendarListEventsSchema, listEvents } from './calendar/basic/calendar_list_events.js';
+import { schema as calendarGetEventSchema, getEvent } from './calendar/basic/calendar_get_event.js';
+import { schema as calendarCreateEventSchema, createEvent } from './calendar/basic/calendar_create_event.js';
+import { schema as calendarUpdateEventSchema, updateEvent } from './calendar/basic/calendar_update_event.js';
+import { schema as calendarDeleteEventSchema, deleteEvent } from './calendar/basic/calendar_delete_event.js';
+
+// Calendar - Free/busy operations
+import { schema as calendarFreeBusyQuerySchema, queryFreeBusy } from './calendar/freebusy/calendar_freebusy_query.js';
+
+// Calendar - CalendarList operations
+import { schema as calendarListListSchema, listCalendarList } from './calendar/calendarlist/calendar_calendarlist_list.js';
+import { schema as calendarListGetSchema, getCalendarListEntry } from './calendar/calendarlist/calendar_calendarlist_get.js';
+
+// Calendar - Events advanced operations
+import { schema as calendarEventsQuickAddSchema, quickAddEvent } from './calendar/events_advanced/calendar_events_quickadd.js';
+import { schema as calendarEventsInstancesSchema, listEventInstances } from './calendar/events_advanced/calendar_events_instances.js';
+import { schema as calendarEventsMoveSchema, moveEvent } from './calendar/events_advanced/calendar_events_move.js';
+
+// Calendar - Colors operations
+import { schema as calendarColorsGetSchema, getColors } from './calendar/colors/calendar_colors_get.js';
+
+// Calendar - Calendars operations
+import { schema as calendarCalendarsInsertSchema, insertCalendar } from './calendar/calendars/calendar_calendars_insert.js';
+import { schema as calendarCalendarsGetSchema, getCalendar } from './calendar/calendars/calendar_calendars_get.js';
+import { schema as calendarCalendarsUpdateSchema, updateCalendar } from './calendar/calendars/calendar_calendars_update.js';
+
+// Calendar - ACL operations
+import { schema as calendarAclListSchema, listAcl } from './calendar/acl/calendar_acl_list.js';
+import { schema as calendarAclInsertSchema, insertAcl } from './calendar/acl/calendar_acl_insert.js';
+
+// Calendar - Settings operations
+import { schema as calendarSettingsListSchema, listSettings } from './calendar/settings/calendar_settings_list.js';
+
 import {
   Tool,
   GDriveSearchInput,
@@ -255,7 +289,24 @@ import {
   GmailDraftMessageInput,
   GmailGetMessagesBatchInput,
   GmailGetThreadsBatchInput,
-  GmailBatchModifyLabelsInput
+  GmailBatchModifyLabelsInput,
+  CalendarListEventsInput,
+  CalendarGetEventInput,
+  CalendarCreateEventInput,
+  CalendarUpdateEventInput,
+  CalendarDeleteEventInput,
+  CalendarFreeBusyQueryInput,
+  CalendarListListInput,
+  CalendarListGetInput,
+  CalendarEventsQuickAddInput,
+  CalendarEventsInstancesInput,
+  CalendarEventsMoveInput,
+  CalendarCalendarsInsertInput,
+  CalendarCalendarsGetInput,
+  CalendarCalendarsUpdateInput,
+  CalendarAclListInput,
+  CalendarAclInsertInput,
+  CalendarSettingsListInput
 } from './types.js';
 
 export const tools: [
@@ -368,7 +419,25 @@ export const tools: [
   Tool<GmailDraftMessageInput>,
   Tool<GmailGetMessagesBatchInput>,
   Tool<GmailGetThreadsBatchInput>,
-  Tool<GmailBatchModifyLabelsInput>
+  Tool<GmailBatchModifyLabelsInput>,
+  Tool<CalendarListEventsInput>,
+  Tool<CalendarGetEventInput>,
+  Tool<CalendarCreateEventInput>,
+  Tool<CalendarUpdateEventInput>,
+  Tool<CalendarDeleteEventInput>,
+  Tool<CalendarFreeBusyQueryInput>,
+  Tool<CalendarListListInput>,
+  Tool<CalendarListGetInput>,
+  Tool<CalendarEventsQuickAddInput>,
+  Tool<CalendarEventsInstancesInput>,
+  Tool<CalendarEventsMoveInput>,
+  Tool<{}>,  // CalendarColorsGetInput (no parameters)
+  Tool<CalendarCalendarsInsertInput>,
+  Tool<CalendarCalendarsGetInput>,
+  Tool<CalendarCalendarsUpdateInput>,
+  Tool<CalendarAclListInput>,
+  Tool<CalendarAclInsertInput>,
+  Tool<CalendarSettingsListInput>
 ] = [
   // Drive - Basic operations
   {
@@ -817,5 +886,79 @@ export const tools: [
   {
     ...gmailBatchModifyLabelsSchema,
     handler: batchModifyLabels,
+  },
+
+  // Calendar tools
+  {
+    ...calendarListEventsSchema,
+    handler: listEvents,
+  },
+  {
+    ...calendarGetEventSchema,
+    handler: getEvent,
+  },
+  {
+    ...calendarCreateEventSchema,
+    handler: createEvent,
+  },
+  {
+    ...calendarUpdateEventSchema,
+    handler: updateEvent,
+  },
+  {
+    ...calendarDeleteEventSchema,
+    handler: deleteEvent,
+  },
+  {
+    ...calendarFreeBusyQuerySchema,
+    handler: queryFreeBusy,
+  },
+  {
+    ...calendarListListSchema,
+    handler: listCalendarList,
+  },
+  {
+    ...calendarListGetSchema,
+    handler: getCalendarListEntry,
+  },
+  {
+    ...calendarEventsQuickAddSchema,
+    handler: quickAddEvent,
+  },
+  {
+    ...calendarEventsInstancesSchema,
+    handler: listEventInstances,
+  },
+  {
+    ...calendarEventsMoveSchema,
+    handler: moveEvent,
+  },
+  {
+    ...calendarColorsGetSchema,
+    handler: getColors,
+  },
+  {
+    ...calendarCalendarsInsertSchema,
+    handler: insertCalendar,
+  },
+  {
+    ...calendarCalendarsGetSchema,
+    handler: getCalendar,
+  },
+  {
+    ...calendarCalendarsUpdateSchema,
+    handler: updateCalendar,
+  },
+  {
+    ...calendarAclListSchema,
+    handler: listAcl,
+  },
+  {
+    ...calendarAclInsertSchema,
+    handler: insertAcl,
+  },
+  {
+    ...calendarSettingsListSchema,
+    handler: listSettings,
   }
 ];

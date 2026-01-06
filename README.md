@@ -1,9 +1,9 @@
 # MCP Server - Google Workspace
 
-**The most comprehensive MCP server for Google Workspace** - Complete programmatic control over Sheets, Docs, Drive, Gmail, and future Calendar, Forms integration.
+**The most comprehensive MCP server for Google Workspace** - Complete programmatic control over Sheets, Docs, Drive, Gmail, Calendar, and future Forms integration.
 
-🚀 **Current Status**: 112 tools (Drive: 21, Sheets: 57, Docs: 23, Gmail: 11)
-📅 **Roadmap**: Calendar, Forms, Slides
+🚀 **Current Status**: 130 tools (Drive: 21, Sheets: 57, Docs: 23, Gmail: 11, Calendar: 18)
+📅 **Roadmap**: Forms, Slides
 
 Extended implementation by Alanse inc.
 
@@ -13,7 +13,7 @@ Extended implementation by Alanse inc.
 
 ### 📊 Extended Google Workspace API Implementation
 
-**112 Total Tools** = **21 Google Drive** + **57 Google Sheets** + **23 Google Docs** + **11 Gmail** operations
+**130 Total Tools** = **21 Google Drive** + **57 Google Sheets** + **23 Google Docs** + **11 Gmail** + **18 Calendar** operations
 
 #### Tool Categories
 
@@ -72,6 +72,44 @@ Extended implementation by Alanse inc.
 #### Batch Operations (3 tools)
 
 - Get Messages Batch, Get Threads Batch, Batch Modify Labels
+
+**Google Calendar Operations (18 tools)**
+
+#### Basic Event Operations (5 tools)
+
+- List Events (Time range, search, pagination)
+- Get Event (Full event details)
+- Create Event (Title, time, location, attendees, Google Meet)
+- Update Event (Modify any event properties)
+- Delete Event (Remove with notifications)
+
+#### Advanced Event Operations (3 tools)
+
+- Quick Add Event (Natural language: "Meeting tomorrow at 2pm")
+- List Event Instances (Recurring event occurrences)
+- Move Event (Transfer between calendars)
+
+#### Calendar List Operations (2 tools)
+
+- List Calendars (User's calendar list with access roles)
+- Get Calendar from List (Detailed calendar information)
+
+#### Calendar Management (3 tools)
+
+- Create Calendar (New secondary calendar)
+- Get Calendar Metadata (Calendar details and settings)
+- Update Calendar (Modify title, description, timezone)
+
+#### Access Control (2 tools)
+
+- List ACL Rules (View sharing settings)
+- Add ACL Rule (Share calendar with users/groups/domains)
+
+#### Utility Operations (3 tools)
+
+- Get Color Palette (Available calendar/event colors)
+- Query Free/Busy (Check availability across calendars)
+- List Settings (User's Calendar preferences)
 
 **Google Docs Operations (23 tools)**
 
