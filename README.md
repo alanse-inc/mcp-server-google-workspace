@@ -299,7 +299,7 @@ npm run watch
 
 ### Testing
 
-The project uses [Vitest](https://vitest.dev/) for testing:
+The project uses [Vitest](https://vitest.dev/) for unit testing:
 
 ```bash
 # Run all tests
@@ -314,6 +314,40 @@ npm run test:ui
 # Coverage report
 npm run test:coverage
 ```
+
+### Interactive Testing with MCP Inspector
+
+[MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) is the official debugging tool for MCP servers. It provides an interactive interface to test all 130 tools in real-time.
+
+**Launch Inspector:**
+
+```bash
+npm run inspect
+```
+
+This opens a browser interface where you can:
+
+- 🔍 **Browse all 130 tools** - View complete tool schemas and descriptions
+- ⚡ **Test tools interactively** - Execute any tool with custom parameters
+- 📊 **Monitor responses** - See real-time responses and error messages
+- 🐛 **Debug issues** - View server logs and notifications
+- 🧪 **Test edge cases** - Try invalid inputs and concurrent operations
+
+**Example workflow:**
+
+1. Start the inspector: `npm run inspect`
+2. Navigate to the **Tools** tab
+3. Select a tool (e.g., `calendar_create_event`)
+4. Fill in the parameters (summary, startTime, endTime)
+5. Click **Execute** to test the tool
+6. View the response and verify the behavior
+
+**Recommended for:**
+
+- Testing new Calendar API tools
+- Verifying OAuth authentication flow
+- Debugging API errors and edge cases
+- Exploring available tools before integration
 
 ### Release Process
 
