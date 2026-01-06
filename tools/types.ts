@@ -978,3 +978,140 @@ export interface GDriveEmptyTrashInput {
   // No parameters needed - empties entire trash for authenticated user
 }
 
+// ============================================================
+// Google Calendar Tool Input Types
+// ============================================================
+
+// Basic operations
+export interface CalendarListEventsInput {
+  calendarId?: string;
+  timeMin?: string;
+  timeMax?: string;
+  q?: string;
+  maxResults?: number;
+  pageToken?: string;
+  singleEvents?: boolean;
+  orderBy?: string;
+}
+
+export interface CalendarGetEventInput {
+  calendarId?: string;
+  eventId: string;
+}
+
+export interface CalendarCreateEventInput {
+  calendarId?: string;
+  summary: string;
+  startTime: string;
+  endTime: string;
+  location?: string;
+  description?: string;
+  attendees?: string[];
+  sendUpdates?: string;
+  conferenceData?: boolean;
+}
+
+export interface CalendarUpdateEventInput {
+  calendarId?: string;
+  eventId: string;
+  summary?: string;
+  startTime?: string;
+  endTime?: string;
+  location?: string;
+  description?: string;
+  attendees?: string[];
+  sendUpdates?: string;
+}
+
+export interface CalendarDeleteEventInput {
+  calendarId?: string;
+  eventId: string;
+  sendUpdates?: string;
+}
+
+// Free/busy operations
+export interface CalendarFreeBusyQueryInput {
+  timeMin: string;
+  timeMax: string;
+  calendars?: string[];
+  timeZone?: string;
+}
+
+// CalendarList operations
+export interface CalendarListListInput {
+  maxResults?: number;
+  minAccessRole?: string;
+  pageToken?: string;
+  showDeleted?: boolean;
+  showHidden?: boolean;
+}
+
+export interface CalendarListGetInput {
+  calendarId: string;
+}
+
+// Events advanced operations
+export interface CalendarEventsQuickAddInput {
+  calendarId?: string;
+  text: string;
+  sendUpdates?: string;
+}
+
+export interface CalendarEventsInstancesInput {
+  calendarId?: string;
+  eventId: string;
+  timeMin?: string;
+  timeMax?: string;
+  maxResults?: number;
+  pageToken?: string;
+  showDeleted?: boolean;
+}
+
+export interface CalendarEventsMoveInput {
+  calendarId: string;
+  eventId: string;
+  destination: string;
+  sendUpdates?: string;
+}
+
+// Calendars operations
+export interface CalendarCalendarsInsertInput {
+  summary: string;
+  description?: string;
+  location?: string;
+  timeZone?: string;
+}
+
+export interface CalendarCalendarsGetInput {
+  calendarId: string;
+}
+
+export interface CalendarCalendarsUpdateInput {
+  calendarId: string;
+  summary?: string;
+  description?: string;
+  location?: string;
+  timeZone?: string;
+}
+
+// ACL operations
+export interface CalendarAclListInput {
+  calendarId: string;
+  maxResults?: number;
+  pageToken?: string;
+  showDeleted?: boolean;
+}
+
+export interface CalendarAclInsertInput {
+  calendarId: string;
+  role: string;
+  scopeType: string;
+  scopeValue?: string;
+  sendNotifications?: boolean;
+}
+
+// Settings operations
+export interface CalendarSettingsListInput {
+  maxResults?: number;
+  pageToken?: string;
+}
