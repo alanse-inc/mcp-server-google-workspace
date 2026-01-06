@@ -1,6 +1,7 @@
 .env
 /dist
 /node_modules
+/data
 
 # Local development documents
 requirements.md
