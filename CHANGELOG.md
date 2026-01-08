@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/alanse-inc/mcp-server-google-workspace/compare/v1.0.0...v1.0.1) (2026-01-06)
+
+
+### Bug Fixes
+
+* add MCP Inspector testing support ([6146495](https://github.com/alanse-inc/mcp-server-google-workspace/commit/6146495e95f648dd5ab11d0500267dc600aee8f0))
+* add MCP Inspector testing support ([03437d1](https://github.com/alanse-inc/mcp-server-google-workspace/commit/03437d1bff4435aa7e65c5a6c73d29830bc75d1e))
+
 ## 1.0.0 (2026-01-06)
 
 
