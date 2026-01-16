@@ -1,6 +1,6 @@
 {
   "name": "@alanse/mcp-server-google-workspace",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The most comprehensive MCP server for Google Workspace - Complete integration for Sheets (57 tools), Drive, and future Docs, Calendar, Forms support",
   "license": "Elastic-2.0",
   "author": "Alanse inc",

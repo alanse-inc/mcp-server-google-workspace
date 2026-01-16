@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/alanse-inc/mcp-server-google-workspace/compare/v1.0.1...v1.1.0) (2026-01-16)
+
+
+### Features
+
+* add Google Slides API support with 11 comprehensive tools (130→141 total) ([0acbf56](https://github.com/alanse-inc/mcp-server-google-workspace/commit/0acbf5679d7883d0609c1b30b6c6f1d8f10a1d1f))
+
 ## [1.0.1](https://github.com/alanse-inc/mcp-server-google-workspace/compare/v1.0.0...v1.0.1) (2026-01-06)
 
 
