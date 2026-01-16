@@ -178,6 +178,27 @@ import { schema as calendarAclInsertSchema, insertAcl } from './calendar/acl/cal
 // Calendar - Settings operations
 import { schema as calendarSettingsListSchema, listSettings } from './calendar/settings/calendar_settings_list.js';
 
+// Slides - Basic operations
+import { schema as slidesCreatePresentationSchema, createPresentation } from './slides/basic/slides_create_presentation.js';
+import { schema as slidesGetPresentationSchema, getPresentation } from './slides/basic/slides_get_presentation.js';
+import { schema as slidesAddSlideSchema, addSlide } from './slides/basic/slides_add_slide.js';
+
+// Slides - Content operations
+import { schema as slidesInsertTextSchema, insertText as slidesInsertText } from './slides/content/slides_insert_text.js';
+import { schema as slidesInsertImageSchema, insertImage as slidesInsertImage } from './slides/content/slides_insert_image.js';
+
+// Slides - Batch operations
+import { schema as slidesBatchUpdateSchema, batchUpdate as slidesBatchUpdate } from './slides/batch/slides_batch_update.js';
+
+// Slides - Reading operations (additional)
+import { schema as slidesGetPageSchema, getPage } from './slides/basic/slides_get_page.js';
+
+// Slides - Editing operations
+import { schema as slidesDuplicateSlideSchema, duplicateSlide } from './slides/editing/slides_duplicate_slide.js';
+import { schema as slidesUpdateSlidesPositionSchema, updateSlidesPosition } from './slides/editing/slides_update_slides_position.js';
+import { schema as slidesReplaceAllTextSchema, replaceAllText } from './slides/editing/slides_replace_all_text.js';
+import { schema as slidesDeleteObjectSchema, deleteObject } from './slides/editing/slides_delete_object.js';
+
 import {
   Tool,
   GDriveSearchInput,
@@ -306,7 +327,18 @@ import {
   CalendarCalendarsUpdateInput,
   CalendarAclListInput,
   CalendarAclInsertInput,
-  CalendarSettingsListInput
+  CalendarSettingsListInput,
+  SlidesCreatePresentationInput,
+  SlidesGetPresentationInput,
+  SlidesAddSlideInput,
+  SlidesInsertTextInput,
+  SlidesInsertImageInput,
+  SlidesBatchUpdateInput,
+  SlidesGetPageInput,
+  SlidesDuplicateSlideInput,
+  SlidesUpdateSlidesPositionInput,
+  SlidesReplaceAllTextInput,
+  SlidesDeleteObjectInput
 } from './types.js';
 
 export const tools: [
@@ -437,7 +469,18 @@ export const tools: [
   Tool<CalendarCalendarsUpdateInput>,
   Tool<CalendarAclListInput>,
   Tool<CalendarAclInsertInput>,
-  Tool<CalendarSettingsListInput>
+  Tool<CalendarSettingsListInput>,
+  Tool<SlidesCreatePresentationInput>,
+  Tool<SlidesGetPresentationInput>,
+  Tool<SlidesAddSlideInput>,
+  Tool<SlidesInsertTextInput>,
+  Tool<SlidesInsertImageInput>,
+  Tool<SlidesBatchUpdateInput>,
+  Tool<SlidesGetPageInput>,
+  Tool<SlidesDuplicateSlideInput>,
+  Tool<SlidesUpdateSlidesPositionInput>,
+  Tool<SlidesReplaceAllTextInput>,
+  Tool<SlidesDeleteObjectInput>
 ] = [
   // Drive - Basic operations
   {
@@ -960,5 +1003,54 @@ export const tools: [
   {
     ...calendarSettingsListSchema,
     handler: listSettings,
+  },
+  // Slides - Basic operations
+  {
+    ...slidesCreatePresentationSchema,
+    handler: createPresentation,
+  },
+  {
+    ...slidesGetPresentationSchema,
+    handler: getPresentation,
+  },
+  {
+    ...slidesAddSlideSchema,
+    handler: addSlide,
+  },
+  // Slides - Content operations
+  {
+    ...slidesInsertTextSchema,
+    handler: slidesInsertText,
+  },
+  {
+    ...slidesInsertImageSchema,
+    handler: slidesInsertImage,
+  },
+  // Slides - Batch operations
+  {
+    ...slidesBatchUpdateSchema,
+    handler: slidesBatchUpdate,
+  },
+  // Slides - Reading operations (additional)
+  {
+    ...slidesGetPageSchema,
+    handler: getPage,
+  },
+  // Slides - Editing operations
+  {
+    ...slidesDuplicateSlideSchema,
+    handler: duplicateSlide,
+  },
+  {
+    ...slidesUpdateSlidesPositionSchema,
+    handler: updateSlidesPosition,
+  },
+  {
+    ...slidesReplaceAllTextSchema,
+    handler: replaceAllText,
+  },
+  {
+    ...slidesDeleteObjectSchema,
+    handler: deleteObject,
   }
 ];

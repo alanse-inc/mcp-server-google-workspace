@@ -1,9 +1,9 @@
 # MCP Server - Google Workspace
 
-**The most comprehensive MCP server for Google Workspace** - Complete programmatic control over Sheets, Docs, Drive, Gmail, Calendar, and future Forms integration.
+**The most comprehensive MCP server for Google Workspace** - Complete programmatic control over Sheets, Docs, Drive, Gmail, Calendar, Slides, and future Forms integration.
 
-🚀 **Current Status**: 130 tools (Drive: 21, Sheets: 57, Docs: 23, Gmail: 11, Calendar: 18)
-📅 **Roadmap**: Forms, Slides
+🚀 **Current Status**: 141 tools (Drive: 21, Sheets: 57, Docs: 23, Gmail: 11, Calendar: 18, Slides: 11)
+📅 **Roadmap**: Forms
 
 Extended implementation by Alanse inc.
 
@@ -13,7 +13,7 @@ Extended implementation by Alanse inc.
 
 ### 📊 Extended Google Workspace API Implementation
 
-**130 Total Tools** = **21 Google Drive** + **57 Google Sheets** + **23 Google Docs** + **11 Gmail** + **18 Calendar** operations
+**141 Total Tools** = **21 Google Drive** + **57 Google Sheets** + **23 Google Docs** + **11 Gmail** + **18 Calendar** + **11 Slides** operations
 
 #### Tool Categories
 
@@ -111,6 +111,31 @@ Extended implementation by Alanse inc.
 - Query Free/Busy (Check availability across calendars)
 - List Settings (User's Calendar preferences)
 
+**Google Slides Operations (11 tools)**
+
+#### Basic Operations (4 tools)
+
+- Create Presentation (New blank presentation)
+- Get Presentation (Full presentation details and metadata)
+- Get Page (Get detailed information about a specific slide)
+- Add Slide (Insert new slide with optional layout)
+
+#### Content Operations (2 tools)
+
+- Insert Text (Add text boxes to slides with positioning)
+- Insert Image (Add images from URL with positioning)
+
+#### Editing Operations (4 tools)
+
+- Duplicate Slide (Copy existing slide with optional positioning)
+- Update Slides Position (Reorder slides in presentation)
+- Replace All Text (Bulk text replacement throughout presentation)
+- Delete Object (Remove shapes, images, text boxes from slides)
+
+#### Batch Operations (1 tool)
+
+- Batch Update (Execute multiple operations in one request)
+
 **Google Docs Operations (23 tools)**
 
 **Basic Operations (4 tools)**
@@ -186,7 +211,8 @@ The server provides access to Google Drive files:
    - `https://www.googleapis.com/auth/drive` (for Drive file operations - read & write)
    - `https://www.googleapis.com/auth/spreadsheets` (for Sheets operations)
    - `https://www.googleapis.com/auth/gmail.modify` (for Gmail operations)
-5. In order to allow interaction with sheets and docs you will also need to enable the [Google Sheets API](https://console.cloud.google.com/apis/api/sheets.googleapis.com/), [Google Docs API](https://console.cloud.google.com/marketplace/product/google/docs.googleapis.com), and [Gmail API](https://console.cloud.google.com/apis/api/gmail.googleapis.com) in your workspaces Enabled API and Services section.
+   - `https://www.googleapis.com/auth/presentations` (for Slides operations)
+5. In order to allow interaction with sheets, docs, and slides you will also need to enable the [Google Sheets API](https://console.cloud.google.com/apis/api/sheets.googleapis.com/), [Google Docs API](https://console.cloud.google.com/marketplace/product/google/docs.googleapis.com), [Google Slides API](https://console.cloud.google.com/apis/api/slides.googleapis.com/), and [Gmail API](https://console.cloud.google.com/apis/api/gmail.googleapis.com) in your workspaces Enabled API and Services section.
 6. [Create an OAuth Client ID](https://console.cloud.google.com/apis/credentials/oauthclient) for application type "Desktop App"
 7. Download the JSON file of your client's OAuth keys
 8. Rename the key file to `gcp-oauth.keys.json` and place into the path you specify with `GWORKSPACE_CREDS_DIR` (i.e. `/Users/username/.config/mcp-google-workspace`)
@@ -246,10 +272,9 @@ Replace `<YOUR_CLIENT_ID>`, `<YOUR_CLIENT_SECRET>`, and `/path/to/config/directo
 
 ## 📈 Project Status
 
-✅ **Complete** (2026-01-06)
+✅ **Complete** (2026-01-14)
 
-- **112 Tools Implemented** (21 Drive + 57 Sheets + 23 Docs + 11 Gmail)
-- **268+ Tests** (100% Pass Rate)
+- **141 Tools Implemented** (21 Drive + 57 Sheets + 23 Docs + 11 Gmail + 18 Calendar + 11 Slides)
 - **Production Ready**
 
 ## 🗺️ Roadmap
@@ -260,12 +285,12 @@ Replace `<YOUR_CLIENT_ID>`, `<YOUR_CLIENT_SECRET>`, and `/path/to/config/directo
 - ✅ **Google Sheets**: 57 tools (Complete API coverage)
 - ✅ **Google Docs**: 23 tools (Document creation, editing, formatting, elements)
 - ✅ **Gmail**: 11 tools (Labels, search, send, batch operations)
+- ✅ **Google Calendar**: 18 tools (Event management, scheduling, calendars, ACL)
+- ✅ **Google Slides**: 11 tools (Presentation creation, slide management, content insertion, editing operations)
 
 ### Coming Soon
 
-- 📅 **Google Calendar**: Event management, scheduling (~10-15 tools)
 - 📋 **Google Forms**: Form creation, response management (~10-15 tools)
-- 🎬 **Google Slides**: Presentation creation, editing (~15-20 tools)
 
 **Goal**: 150+ tools covering the entire Google Workspace ecosystem
 

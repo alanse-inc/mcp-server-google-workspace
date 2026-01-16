@@ -1115,3 +1115,83 @@ export interface CalendarSettingsListInput {
   maxResults?: number;
   pageToken?: string;
 }
+
+// ============================================================================
+// Google Slides Tool Input Types
+// ============================================================================
+
+// Basic operations
+export interface SlidesCreatePresentationInput {
+  title: string;
+}
+
+export interface SlidesGetPresentationInput {
+  presentationId: string;
+}
+
+export interface SlidesAddSlideInput {
+  presentationId: string;
+  insertionIndex?: number;
+  slideLayoutReference?: string;
+}
+
+// Content operations
+export interface SlidesInsertTextInput {
+  presentationId: string;
+  slideId: string;
+  text: string;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+}
+
+export interface SlidesInsertImageInput {
+  presentationId: string;
+  slideId: string;
+  imageUrl: string;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+}
+
+// Batch operations
+export interface SlidesBatchUpdateInput {
+  presentationId: string;
+  requests: Array<{
+    type: string;
+    params: Record<string, any>;
+  }>;
+}
+
+// Slides - Reading operations (additional)
+export interface SlidesGetPageInput {
+  presentationId: string;
+  pageObjectId: string;
+}
+
+// Slides - Editing operations
+export interface SlidesDuplicateSlideInput {
+  presentationId: string;
+  slideId: string;
+  insertionIndex?: number;
+}
+
+export interface SlidesUpdateSlidesPositionInput {
+  presentationId: string;
+  slideIds: string[];
+  insertionIndex: number;
+}
+
+export interface SlidesReplaceAllTextInput {
+  presentationId: string;
+  findText: string;
+  replaceText: string;
+  matchCase?: boolean;
+}
+
+export interface SlidesDeleteObjectInput {
+  presentationId: string;
+  objectId: string;
+}
